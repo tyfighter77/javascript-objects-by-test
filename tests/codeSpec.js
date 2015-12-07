@@ -20,7 +20,7 @@ Functions as Objects
   })
 
   it('Can be made with "new Object"', function(){
-    expect(makeEmptyObjectNew).toEqual(jasmine.Any(Object))
+    expect(makeEmptyObjectNew()).toEqual({})
   })
 
   describe('Use key value pairs', function(){
@@ -182,6 +182,7 @@ Functions as Objects
     }).toEqual({
       second: 'second',
       third: 'third',
+      first: 'first'
     })
   })
 
@@ -191,11 +192,10 @@ Functions as Objects
         first: 'first',
         second: 'second',
         third: 'third'
-      }).toBe({
+      })).toEqual({
         first: 'first',
         third: 'third'
       })
-    )
   })
 
   it('Can be looped through with for(var in obj)', function(){
